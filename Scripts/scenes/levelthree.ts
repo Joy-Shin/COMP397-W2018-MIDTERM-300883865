@@ -1,15 +1,15 @@
 module scenes {
-    export class LevelTwoScene extends objects.Scene {
+    export class LevelThreeScene extends objects.Scene {
       // Private Instance Variables
-      private _ocean: objects.Ocean2;
+      private _ocean: objects.Ocean3;
       private _plane: objects.Plane2;
-      private _island: objects.Island2;
-      private _clouds: objects.Cloud2[];
+      private _island: objects.Island3;
+      private _clouds: objects.Cloud3[];
       private _cloudNum: number;
       private _scoreBoard: managers.ScoreBoard;
   
       private _engineSound: createjs.AbstractSoundInstance;
-      private _coin: objects.Coin2;
+      private _coin: objects.Coin3;
   
       // Public Properties
   
@@ -29,20 +29,26 @@ module scenes {
       // Initialize Game Variables and objects
       public Start(): void {
           console.log("Come to Level 2 Scene");
-        this._ocean = new objects.Ocean2();
+        this._ocean = new objects.Ocean3();
         this._plane = new objects.Plane2();
+        
+        //Set the rotation and position of the plane
+        this._plane.rotation = 270;
+        this._plane.x = 600;
+        this._plane.planeFlash.rotation = 270;
+        
         managers.Game.plane2 = this._plane;
   
-        this._coin = new objects.Coin2();
-        this._island = new objects.Island2();
+        this._coin = new objects.Coin3();
+        this._island = new objects.Island3();
   
         // instantiate the cloud array
-        this._clouds = new Array<objects.Cloud2>();
-        this._cloudNum = 2;
+        this._clouds = new Array<objects.Cloud3>();
+        this._cloudNum = 3;
 
         // loop and add each cloud to the array
         for (let count = 0; count < this._cloudNum; count++) {
-          this._clouds[count] = new objects.Cloud2();
+          this._clouds[count] = new objects.Cloud3();
         }
   
         this._engineSound = createjs.Sound.play("engine");
@@ -79,11 +85,6 @@ module scenes {
         if(this._scoreBoard.Lives <= 0) {
           this._engineSound.stop();
           managers.Game.currentScene = config.Scene.OVER;
-        }
-
-        if(this._scoreBoard.Score >= 1000) {
-            this._engineSound.stop();
-            managers.Game.currentScene = config.Scene.LEVELTHREE;
         }
       }
   

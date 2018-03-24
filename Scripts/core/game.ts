@@ -50,7 +50,7 @@
       [69, 316, 65, 65, 0, 0, 0],
       [136, 316, 200, 60, 0, 0, 0],
       [2, 383, 200, 60, 0, 0, 0]
-  ],
+    ],
 
     "animations": {
       "cloud": { "frames": [0] },
@@ -145,6 +145,9 @@
         break;
       case config.Scene.LEVELTWO:
         currentScene = new scenes.LevelTwoScene();
+        break;
+      case config.Scene.LEVELTHREE:
+        currentScene = new scenes.LevelThreeScene();
         break;
     }
 

@@ -28,8 +28,11 @@ var objects;
         // public methods
         // Initializes variables and creates new objects
         Plane2.prototype.Start = function () {
+            //Rotate the plane
+            this.rotation = 90;
             this.planeFlash = new objects.PlaneFlash();
             this.planeFlash.alpha = 1;
+            this.planeFlash.rotation = 90;
             this.planeFlash.on("animationend", this._animationEnded.bind(this), false);
             this.x = 50;
             this.y = 250;

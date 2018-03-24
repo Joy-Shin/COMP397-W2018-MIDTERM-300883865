@@ -1,5 +1,5 @@
 module objects {
-    export class Ocean2 extends createjs.Bitmap {
+    export class Ocean3 extends createjs.Bitmap {
       // private instance variables
       private _dx: number;
   
@@ -15,17 +15,17 @@ module objects {
   
       // reset the objects location to some value
       private _reset():void {
-        this.x = -200;
+        this.x = -400;
       }
   
       // move the object to some new location
       private _move():void {
-        this.x -= this._dx;
+        this.x += this._dx;
       }
   
       // check to see if some boundary has been passed
       private _checkBounds():void {
-        if(this.x <= -800) {
+        if(this.x >= 0) {
           this._reset();
         }
       }

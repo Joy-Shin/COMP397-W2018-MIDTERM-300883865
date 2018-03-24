@@ -81,7 +81,7 @@ module scenes {
       }
 
       // if score is greater than 500, switch secenes to the level 2 play game scene
-      if(this._scoreBoard.Score >= 200) { //TODO: Change the Score to 500
+      if(this._scoreBoard.Score >= 500) {
         this._engineSound.stop();
         managers.Game.currentScene = config.Scene.LEVELTWO;
       }

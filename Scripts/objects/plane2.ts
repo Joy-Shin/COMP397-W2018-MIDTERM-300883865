@@ -12,20 +12,23 @@ module objects {
         this.Start();
       }
   
-      // private methods
-      private _animationEnded():void {
-        if(this.alpha == 0) {
-          this.alpha = 1;
-          this.planeFlash.alpha = 0;
-        }
+    // private methods
+    private _animationEnded():void {
+      if(this.alpha == 0) {
+        this.alpha = 1;
+        this.planeFlash.alpha = 0;
       }
+    }
   
       // public methods
   
       // Initializes variables and creates new objects
       public Start():void {
+        //Rotate the plane
+        this.rotation = 90;
         this.planeFlash = new objects.PlaneFlash();
         this.planeFlash.alpha = 1;
+        this.planeFlash.rotation = 90;
         this.planeFlash.on("animationend", this._animationEnded.bind(this), false );
   
         this.x = 50;

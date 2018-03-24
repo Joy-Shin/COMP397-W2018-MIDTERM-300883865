@@ -127,6 +127,9 @@
             case config.Scene.LEVELTWO:
                 currentScene = new scenes.LevelTwoScene();
                 break;
+            case config.Scene.LEVELTHREE:
+                currentScene = new scenes.LevelThreeScene();
+                break;
         }
         currentState = managers.Game.currentScene;
         managers.Game.currentSceneObject = currentScene;

@@ -10,43 +10,43 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var objects;
 (function (objects) {
-    var Ocean2 = /** @class */ (function (_super) {
-        __extends(Ocean2, _super);
+    var Ocean3 = /** @class */ (function (_super) {
+        __extends(Ocean3, _super);
         // public properties
         // Constructor
-        function Ocean2() {
+        function Ocean3() {
             var _this = _super.call(this, managers.Game.assetManager.getResult("ocean2")) || this;
             _this.Start();
             return _this;
         }
         // private methods
         // reset the objects location to some value
-        Ocean2.prototype._reset = function () {
-            this.x = -200;
+        Ocean3.prototype._reset = function () {
+            this.x = -400;
         };
         // move the object to some new location
-        Ocean2.prototype._move = function () {
-            this.x -= this._dx;
+        Ocean3.prototype._move = function () {
+            this.x += this._dx;
         };
         // check to see if some boundary has been passed
-        Ocean2.prototype._checkBounds = function () {
-            if (this.x <= -800) {
+        Ocean3.prototype._checkBounds = function () {
+            if (this.x >= 0) {
                 this._reset();
             }
         };
         // public methods
         // Initializes variables and creates new objects
-        Ocean2.prototype.Start = function () {
+        Ocean3.prototype.Start = function () {
             this._dx = 5;
             this._reset();
         };
         // updates the game object every frame
-        Ocean2.prototype.Update = function () {
+        Ocean3.prototype.Update = function () {
             this._move();
             this._checkBounds();
         };
-        return Ocean2;
+        return Ocean3;
     }(createjs.Bitmap));
-    objects.Ocean2 = Ocean2;
+    objects.Ocean3 = Ocean3;
 })(objects || (objects = {}));
-//# sourceMappingURL=ocean2.js.map
+//# sourceMappingURL=ocean3.js.map

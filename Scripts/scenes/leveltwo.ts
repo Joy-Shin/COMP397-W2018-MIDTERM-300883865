@@ -2,14 +2,14 @@ module scenes {
     export class LevelTwoScene extends objects.Scene {
       // Private Instance Variables
       private _ocean: objects.Ocean2;
-      private _plane: objects.Plane;
-      private _island: objects.Island;
-      private _clouds: objects.Cloud[];
+      private _plane: objects.Plane2;
+      private _island: objects.Island2;
+      private _clouds: objects.Cloud2[];
       private _cloudNum: number;
       private _scoreBoard: managers.ScoreBoard;
   
       private _engineSound: createjs.AbstractSoundInstance;
-      private _coin: objects.Coin;
+      private _coin: objects.Coin2;
   
       // Public Properties
   
@@ -30,18 +30,19 @@ module scenes {
       public Start(): void {
           console.log("Come to Level 2 Scene");
         this._ocean = new objects.Ocean2();
-        this._plane = new objects.Plane();
-        managers.Game.plane = this._plane;
+        this._plane = new objects.Plane2();
+        managers.Game.plane2 = this._plane;
   
-        this._coin = new objects.Coin();
-        this._island = new objects.Island();
+        this._coin = new objects.Coin2();
+        this._island = new objects.Island2();
   
         // instantiate the cloud array
-        this._clouds = new Array<objects.Cloud>();
-        this._cloudNum = 3;
+        this._clouds = new Array<objects.Cloud2>();
+        this._cloudNum = 2;
+
         // loop and add each cloud to the array
         for (let count = 0; count < this._cloudNum; count++) {
-          this._clouds[count] = new objects.Cloud();
+          this._clouds[count] = new objects.Cloud2();
         }
   
         this._engineSound = createjs.Sound.play("engine");
@@ -49,8 +50,7 @@ module scenes {
         this._engineSound.volume = 0.3;
   
         // create the scoreboard UI for the Scene
-        this._scoreBoard = new managers.ScoreBoard();
-        managers.Game.scoreBoard = this._scoreBoard;
+        this._scoreBoard = managers.Game.scoreBoard;
   
         this.Main();
       }
@@ -80,13 +80,6 @@ module scenes {
           this._engineSound.stop();
           managers.Game.currentScene = config.Scene.OVER;
         }
-  
-        // if score is greater than 500, switch secenes to the level 2 play game scene
-        if(this._scoreBoard.Score >= 500) {
-          this._engineSound.stop();
-          //managers.Game.currentScene = config.Scene.
-        }
-        
       }
   
       // This is where the fun happens

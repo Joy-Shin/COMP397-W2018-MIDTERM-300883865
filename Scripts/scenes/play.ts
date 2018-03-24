@@ -37,7 +37,7 @@ module scenes {
 
       // instantiate the cloud array
       this._clouds = new Array<objects.Cloud>();
-      this._cloudNum = 3;
+      this._cloudNum = 1;
       // loop and add each cloud to the array
       for (let count = 0; count < this._cloudNum; count++) {
         this._clouds[count] = new objects.Cloud();
@@ -80,6 +80,12 @@ module scenes {
         managers.Game.currentScene = config.Scene.OVER;
       }
 
+      // if score is greater than 500, switch secenes to the level 2 play game scene
+      if(this._scoreBoard.Score >= 200) { //TODO: Change the Score to 500
+        this._engineSound.stop();
+        managers.Game.currentScene = config.Scene.LEVELTWO;
+      }
+      
     }
 
     // This is where the fun happens

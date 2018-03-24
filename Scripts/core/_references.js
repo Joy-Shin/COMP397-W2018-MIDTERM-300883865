@@ -12,6 +12,7 @@
 /// <reference path="../../Scripts/managers/collision.ts"/>
 /// <reference path="../../Scripts/objects/button.ts"/>
 /// <reference path="../../Scripts/objects/ocean.ts"/>
+/// <reference path="../../Scripts/objects/ocean2.ts"/>
 /// <reference path="../../Scripts/objects/plane.ts"/>
 /// <reference path="../../Scripts/objects/planeflash.ts"/>
 /// <reference path="../../Scripts/objects/coin.ts"/>
@@ -19,5 +20,6 @@
 /// <reference path="../../Scripts/objects/cloud.ts"/>
 /// <reference path="../../Scripts/scenes/over.ts"/>
 /// <reference path="../../Scripts/scenes/play.ts"/>
+/// <reference path="../../Scripts/scenes/leveltwo.ts"/>
 /// <reference path="../../Scripts/scenes/start.ts"/>
 //# sourceMappingURL=_references.js.map
